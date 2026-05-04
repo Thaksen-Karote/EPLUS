@@ -1,0 +1,68 @@
+import { Client } from '@/types';
+
+export const clientsData: Client[] = [
+  {
+    id: 'ntpc',
+    name: 'NTPC',
+    industry: 'Power & Energy',
+    logo: '/logos/ntpc.png',
+    description: 'India’s largest power generation company with multiple thermal and renewable energy projects.',
+    projectsCompleted: 2,
+  },
+  {
+    id: 'vedanta',
+    name: 'Vedanta Group',
+    industry: 'Mining & Metals',
+    logo: '/logos/vedanta.png',
+    description: 'Global natural resources company engaged in mining, oil & gas, and metals.',
+    projectsCompleted: 1,
+  },
+  {
+    id: 'm3m',
+    name: 'M3M India',
+    industry: 'Real Estate',
+    logo: '/logos/m3m.png',
+    description: 'Leading real estate developer known for premium residential and commercial projects.',
+    projectsCompleted: 1,
+  },
+  {
+    id: 'obra',
+    name: 'OBRA Thermal Power Station',
+    industry: 'Power & Energy',
+    logo: '/logos/obra.png',
+    description: 'Major thermal power station contributing to regional electricity supply.',
+    projectsCompleted: 2,
+  },
+  {
+    id: 'ish',
+    name: 'Indian School of Hospitality',
+    industry: 'Education & Hospitality',
+    logo: '/logos/ish.png',
+    description: 'Premier hospitality education institute based in Gurugram.',
+    projectsCompleted: 1,
+  },
+  {
+    id: 'ampm',
+    name: 'AMPM Cafe',
+    industry: 'Hospitality',
+    logo: '/logos/ampm.png',
+    description: 'Premium cafe chain with modern interior and design standards.',
+    projectsCompleted: 1,
+  },
+  {
+    id: 'govt-projects',
+    name: 'Government Projects (Karnal, Kurukshetra)',
+    industry: 'Public Infrastructure',
+    logo: '/logos/govt.png',
+    description: 'Municipal and public sector projects including large-scale STPs.',
+    projectsCompleted: 5,
+  },
+  {
+    id: 'hotel-projects',
+    name: 'Hotel Projects (Katra & Alwar)',
+    industry: 'Hospitality',
+    logo: '/logos/hotel.png',
+    description: 'Interior and MEP execution for hotel developments.',
+    projectsCompleted: 2,
+  },
+];
