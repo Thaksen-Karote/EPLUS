@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { fetchProjects } from '@/lib/api';
 import ProjectsClient from '@/components/ProjectClient';
+import { enrichProjectsWithGallery } from '@/lib/gallery';
 
 export const metadata: Metadata = {
   title: 'Projects - Engineering Plus',
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default async function ProjectsPage() {
-  const projects = await fetchProjects();
+  const projects = enrichProjectsWithGallery(await fetchProjects());
 
   return <ProjectsClient projects={projects} />;
 }

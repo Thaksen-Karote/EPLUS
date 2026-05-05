@@ -42,59 +42,56 @@ export default function ServiceCard({ service }: ServiceCardProps) {
   if (pathname.startsWith("/services")) {
     return (
       <div className="relative overflow-hidden rounded-lg border border-gray-100 bg-slate-100 p-0 shadow-lg transition-all hover:shadow-lg">
-        <div className="relative z-10 flex flex-col gap-8 p-8 pb-14 md:flex-row">
+        <div className="relative z-10 flex flex-col gap-8 p-8 pb-8 md:pb-14">
+          <div className="flex flex-col gap-8 md:flex-row">
+            {/* LEFT SIDE */}
+            <div className="flex-1 space-y-4">
+              <div className="flex items-center gap-4">
+                {IconComponent && (
+                  <IconComponent className={`w-10 h-10 ${service.color}`} />
+                )}
 
-          {/* LEFT SIDE */}
-          <div className="flex-1 space-y-4">
-
-            <div className="flex items-center gap-4">
-              {IconComponent && (
-                <IconComponent className={`w-10 h-10 ${service.color}`} />
-              )}
-
-              <div className="flex items-center gap-3">
-                <h3 className="text-2xl font-bold text-gray-900">
-                  {service.name}
-                </h3>
-                <ProjBadge category={service.category} />
+                <div className="flex items-center gap-3">
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    {service.name}
+                  </h3>
+                  <ProjBadge category={service.category} />
+                </div>
               </div>
+
+              <p className="text-gray-600 leading-relaxed">
+                {service.description}
+              </p>
             </div>
 
-            <p className="text-gray-600 leading-relaxed">
-              {service.description}
-            </p>
+            {/* RIGHT SIDE (BENEFITS) */}
+            <div className="flex-1">
+              <h4 className="text-sm font-semibold text-gray-900 mb-3">
+                Key Benefits:
+              </h4>
 
+              <ul className="space-y-3">
+                {service.benefits.map((benefit, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-2 text-sm text-gray-600"
+                  >
+                    <span className="text-green-600 mt-1">✔</span>
+                    <span>{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {/* RIGHT SIDE (BENEFITS) */}
-          <div className="flex-1">
-            <h4 className="text-sm font-semibold text-gray-900 mb-3">
-              Key Benefits:
-            </h4>
-
-            <ul className="space-y-3">
-              {service.benefits.map((benefit, index) => (
-                <li
-                  key={index}
-                  className="flex items-start gap-2 text-sm text-gray-600"
-                >
-                  <span className="text-green-600 mt-1">✔</span>
-                  <span>{benefit}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
+          <Link
+            href="/contact#message"
+            className="group z-20 flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[var(--color-tertiary)] to-[var(--color-secondary)] px-4 py-3 text-sm font-semibold text-white shadow-md transition-all hover:shadow-lg md:absolute md:bottom-8 md:right-6 md:inline-flex md:w-auto md:py-2 md:justify-center"
+          >
+            Explore Services
+            <ArrowRight className="size-4 shrink-0 group-hover:translate-x-1 transition-transform duration-300" aria-hidden />
+          </Link>
         </div>
-
-        <Link
-          href="/contact#message"
-          className="group absolute bottom-8 right-6 z-20 inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[var(--color-tertiary)] to-[var(--color-secondary)] px-4 py-2 text-sm font-semibold text-white shadow-md hover:shadow-lg transition-all"
-        >
-          Explore Services
-          <ArrowRight className="size-4 shrink-0 group-hover:translate-x-1 transition-transform duration-300" aria-hidden />
-        </Link>
-
       </div>
     );
   }

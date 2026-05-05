@@ -1,5 +1,16 @@
+'use client';
+
+import { useState, useMemo, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 import { Project } from '@/types';
-import { MapPin, CalendarDays, Tag, ChevronLeft, ChevronRight } from 'lucide-react';
+import {
+  MapPin,
+  CalendarDays,
+  Tag,
+  ChevronLeft,
+  ChevronRight,
+} from 'lucide-react';
+import GalleryLightbox from '@/components/GalleryLightbox';
 
 interface ProjectCardProps {
   project: Project;
@@ -12,6 +23,35 @@ export default function ProjectCard({
   featured = false,
   variant = 'home',
 }: ProjectCardProps) {
+  const slides = useMemo(() => {
+    if (variant !== 'projects') return [];
+    if (!project.showGalleryImages) return [];
+    if (project.gallery && project.gallery.length > 0) return project.gallery;
+    return [];
+  }, [variant, project.showGalleryImages, project.gallery]);
+
+  const lightboxItems = useMemo(
+    () =>
+      slides.map((src, i) => ({
+        src,
+        alt: `${project.name} — photo ${i + 1} of ${slides.length}`,
+      })),
+    [slides, project.name]
+  );
+
+  const [slideIndex, setSlideIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+
+  const openLightbox = useCallback(() => {
+    if (slides.length > 0) setLightboxOpen(true);
+  }, [slides.length]);
+
+  const closeLightbox = useCallback(() => setLightboxOpen(false), []);
+
+  useEffect(() => {
+    setSlideIndex(0);
+    setLightboxOpen(false);
+  }, [project.id, slides.length]);
 
   // HOME CARD (same as current but WITHOUT button)
   if (variant === 'home') {
@@ -53,30 +93,65 @@ export default function ProjectCard({
 
   // PROJECTS PAGE CARD (FULL WIDTH)
   return (
-<div className="min-h-[300px] relative group bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col md:flex-row">
-      {/* LEFT SIDE (IMAGE / SLIDER FUTURE) */}
-      <div className="relative md:w-[40%] h-52 md:h-auto overflow-hidden">
+    <>
+    <div className="min-h-[300px] relative group bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col md:flex-row">
+      {/* LEFT SIDE (gallery / hero image / gradient) */}
+      <div className="relative md:w-[40%] h-52 md:min-h-[240px] md:h-auto overflow-hidden bg-slate-100">
+        {slides.length > 0 ? (
+          <>
+            <Image
+              src={slides[slideIndex]}
+              alt={`${project.name} — photo ${slideIndex + 1} of ${slides.length}`}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 40vw"
+              priority={slideIndex === 0}
+            />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] bg-gradient-to-t from-black/45 to-transparent h-16 md:h-20" aria-hidden />
+            <button
+              type="button"
+              onClick={openLightbox}
+              className="absolute inset-0 z-[2] cursor-zoom-in bg-transparent"
+              aria-label={`Open full size — ${project.name}`}
+            />
+            <span className="pointer-events-none absolute bottom-3 left-3 z-[3] rounded-md bg-black/35 px-2 py-0.5 text-xs font-semibold text-white backdrop-blur-sm">
+              {project.category}
+            </span>
+          </>
+        ) : (
+          <div className="w-full h-full min-h-[13rem] bg-gradient-to-br from-[var(--color-tertiary)] to-[var(--color-secondary)] flex items-center justify-center text-white text-xl font-bold">
+            {project.category}
+          </div>
+        )}
 
-        {/* TEMP GRADIENT (future image slider) */}
-        <div className="w-full h-full bg-gradient-to-br from-[var(--color-tertiary)] to-[var(--color-secondary)] flex items-center justify-center text-white text-xl font-bold">
-          {project.category}
-        </div>
-
-        {/* FUTURE: arrows */}
-        <button
-          type="button"
-          className="absolute left-2 top-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-md bg-white/30 backdrop-blur-sm text-white shadow-sm transition hover:bg-white/45"
-          aria-label="Previous image"
-        >
-          <ChevronLeft className="size-5 shrink-0" strokeWidth={2} aria-hidden />
-        </button>
-        <button
-          type="button"
-          className="absolute right-2 top-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-md bg-white/30 backdrop-blur-sm text-white shadow-sm transition hover:bg-white/45"
-          aria-label="Next image"
-        >
-          <ChevronRight className="size-5 shrink-0" strokeWidth={2} aria-hidden />
-        </button>
+        {slides.length > 1 && (
+          <>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setSlideIndex(
+                  (i) => (i - 1 + slides.length) % slides.length
+                );
+              }}
+              className="absolute left-2 top-1/2 z-[4] -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-md bg-white/30 backdrop-blur-sm text-white shadow-sm transition hover:bg-white/45"
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="size-5 shrink-0" strokeWidth={2} aria-hidden />
+            </button>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setSlideIndex((i) => (i + 1) % slides.length);
+              }}
+              className="absolute right-2 top-1/2 z-[4] -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-md bg-white/30 backdrop-blur-sm text-white shadow-sm transition hover:bg-white/45"
+              aria-label="Next image"
+            >
+              <ChevronRight className="size-5 shrink-0" strokeWidth={2} aria-hidden />
+            </button>
+          </>
+        )}
       </div>
 
       {/* RIGHT SIDE (DETAILS) */}
@@ -134,5 +209,13 @@ export default function ProjectCard({
 
       </div>
     </div>
+
+    <GalleryLightbox
+      items={lightboxItems}
+      open={lightboxOpen}
+      initialIndex={slideIndex}
+      onClose={closeLightbox}
+    />
+    </>
   );
 }

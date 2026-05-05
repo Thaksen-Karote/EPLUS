@@ -19,6 +19,8 @@ import {
   User,
   Phone,
   Briefcase,
+  Menu,
+  X,
 } from 'lucide-react';
 
 const navLinks = [
@@ -178,27 +180,21 @@ export default function Navbar() {
             <button
               type="button"
               onClick={toggleMenu}
+              aria-expanded={isOpen}
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
               className="p-2 rounded-lg text-slate-700 hover:bg-slate-100"
             >
-              <svg
-                className={`h-6 w-6 transition-transform ${isOpen ? 'rotate-90' : ''}`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
+              {isOpen ? (
+                <X className="size-6" strokeWidth={2} aria-hidden />
+              ) : (
+                <Menu className="size-6" strokeWidth={2} aria-hidden />
+              )}
             </button>
           </div>
         </div>
 
         {isOpen && (
-          <div className="md:hidden flex flex-col gap-2 pb-4">
+          <div className="md:hidden flex w-full flex-col gap-2 pb-4">
             {navLinks.map((link) => {
               const Icon = link.icon;
               const isActive = pathname === link.href;
@@ -208,11 +204,11 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`inline-flex flex-row items-center gap-2 px-4 py-3 rounded-lg text-sm font-medium leading-normal transition-all
+                  className={`relative z-10 inline-flex w-full flex-row items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium leading-normal transition-colors
                   ${
                     isActive
-                      ? 'bg-[var(--color-primary)] text-white'
-                      : 'text-slate-700 hover:bg-slate-100'
+                      ? `text-white shadow-sm ${gradientClass}`
+                      : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100/80'
                   }`}
                 >
                   <Icon className="size-4 shrink-0" strokeWidth={2} aria-hidden />

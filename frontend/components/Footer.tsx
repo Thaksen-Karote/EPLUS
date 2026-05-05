@@ -12,6 +12,8 @@ export default function Footer() {
       { label: 'Team', href: '/team' },
       { label: 'Services', href: '/services' },
       { label: 'Projects', href: '/projects' },
+      { label: 'Gallery', href: '/gallery' },
+      { label: 'Certificates', href: '/certificates' },
       { label: 'Careers', href: '/careers' },
     ],
     Services: [
@@ -22,7 +24,7 @@ export default function Footer() {
     ],
     Support: [
       { label: 'Contact Us', href: '/contact' },
-      { label: 'FAQ', href: COMING_SOON_PATH },
+      { label: 'FAQ', href: '/about#faq' },
       { label: 'Documentation', href: COMING_SOON_PATH },
       { label: 'Blog', href: COMING_SOON_PATH },
     ],

@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import HeroSlideshow from '@/components/HeroSlideshow';
 import { heroImagesByPage } from '@/data/hero-images';
 import SectionWrapper from '@/components/SectionWrapper';
+import FAQSection from '@/components/FAQSection';
 import {
   Target,
   Rocket,
@@ -11,11 +12,8 @@ import {
   Leaf,
   Building2,
   Wrench,
-  Heart,
-  FileCheck,
-  Award,
 } from 'lucide-react';
-import { certificationsData } from '@/data/certifications';
+import CertificationCards from '@/components/CertificationCards';
 
 export const metadata: Metadata = {
   title: 'About Engineering Plus',
@@ -185,37 +183,11 @@ export default function About() {
         title="Certifications & Credentials"
         subtitle="Committed to quality, safety, and environmental standards"
       >
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {certificationsData.map((cert) => {
-            const iconMap = {
-              ShieldCheck,
-              Leaf,
-              Heart,
-              FileCheck,
-            };
-            const IconComponent = iconMap[cert.icon as keyof typeof iconMap];
-
-            return (
-              <div
-                key={cert.id}
-                className="group bg-white border border-slate-200 rounded-lg p-6 text-center shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-              >
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-[var(--color-primary)]/10 to-[var(--color-quaternary)]/10 mb-4 group-hover:scale-110 transition-transform">
-                  {IconComponent && (
-                    <IconComponent className="w-7 h-7 text-[var(--color-primary)]" />
-                  )}
-                </div>
-                <h4 className="font-bold text-slate-900 mb-1">{cert.name}</h4>
-                <p className="text-sm text-slate-600 mb-2">{cert.issuer}</p>
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-slate-100 rounded-full">
-                  <Award className="w-3.5 h-3.5 text-slate-500" />
-                  <span className="text-xs font-medium text-slate-700">{cert.year}</span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <CertificationCards />
       </SectionWrapper>
+
+      {/* 🔥 FAQ SECTION */}
+      <FAQSection />
 
     </main>
   );

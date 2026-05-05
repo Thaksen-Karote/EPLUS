@@ -7,6 +7,10 @@ export interface Project {
   location: string;
   description: string;
   image: string;
+  /** Extra images for project detail card (e.g. Vedanta gallery). */
+  gallery?: string[];
+  /** When true, projects page and gallery may show folder images; otherwise gradient only. */
+  showGalleryImages: boolean;
   completionDate: string;
   budget: string;
   scope: string[];

@@ -12,6 +12,7 @@ export const projectsData: Project[] = [
     completionDate: '2023',
     budget: 'Confidential',
     scope: ['Design', 'Civil Works', 'Mechanical Installation', 'Electrical', 'Commissioning'],
+    showGalleryImages: false,
     featured: true,
   },
 
@@ -26,6 +27,7 @@ export const projectsData: Project[] = [
     completionDate: '2023',
     budget: 'Confidential',
     scope: ['EPC Execution', 'Automation', 'Monitoring Systems'],
+    showGalleryImages: false,
     featured: true,
   },
 
@@ -40,6 +42,7 @@ export const projectsData: Project[] = [
     completionDate: '2023',
     budget: 'Confidential',
     scope: ['Design', 'Execution', 'Testing', 'Commissioning'],
+    showGalleryImages: false,
     featured: false,
   },
 
@@ -54,6 +57,7 @@ export const projectsData: Project[] = [
     completionDate: '2024',
     budget: 'Confidential',
     scope: ['Civil', 'Mechanical', 'Electrical', 'Automation'],
+    showGalleryImages: false,
     featured: true,
   },
 
@@ -68,6 +72,7 @@ export const projectsData: Project[] = [
     completionDate: '2024',
     budget: 'Confidential',
     scope: ['Pipeline Network', 'STP Design', 'Execution'],
+    showGalleryImages: false,
     featured: true,
   },
 
@@ -82,6 +87,7 @@ export const projectsData: Project[] = [
     completionDate: '2024',
     budget: 'Confidential',
     scope: ['Full EPC', 'Automation', 'Monitoring'],
+    showGalleryImages: true,
     featured: true,
   },
 
@@ -96,6 +102,7 @@ export const projectsData: Project[] = [
     completionDate: '2024',
     budget: 'Confidential',
     scope: ['11 KV Substation', 'Electrical Works', 'Power Distribution'],
+    showGalleryImages: false,
     featured: false,
   },
 
@@ -110,6 +117,7 @@ export const projectsData: Project[] = [
     completionDate: '2023',
     budget: 'Confidential',
     scope: ['Electrical Works', 'Substation Setup', 'Line Installation'],
+    showGalleryImages: false,
     featured: false,
   },
 
@@ -124,6 +132,7 @@ export const projectsData: Project[] = [
     completionDate: '2023',
     budget: 'Confidential',
     scope: ['Interior Design', 'Execution', 'Finishing'],
+    showGalleryImages: true,
     featured: true,
   },
 
@@ -138,6 +147,7 @@ export const projectsData: Project[] = [
     completionDate: '2023',
     budget: 'Confidential',
     scope: ['Interior Design', 'Civil Coordination', 'Execution', 'Safety Compliance'],
+    showGalleryImages: false,
     featured: false,
   },
 
@@ -152,6 +162,7 @@ export const projectsData: Project[] = [
     completionDate: '2024',
     budget: 'Confidential',
     scope: ['Interior', 'MEP Coordination', 'Execution'],
+    showGalleryImages: false,
     featured: false,
   },
 
@@ -166,6 +177,7 @@ export const projectsData: Project[] = [
     completionDate: '2024',
     budget: 'Confidential',
     scope: ['HVAC', 'Electrical', 'Plumbing'],
+    showGalleryImages: false,
     featured: true,
   },
 
@@ -180,6 +192,7 @@ export const projectsData: Project[] = [
     completionDate: '2023',
     budget: 'Confidential',
     scope: ['Interior Design', 'Execution'],
+    showGalleryImages: false,
     featured: false,
   },
 
@@ -194,6 +207,7 @@ export const projectsData: Project[] = [
     completionDate: '2024',
     budget: 'Confidential',
     scope: ['Interior', 'MEP', 'Execution'],
+    showGalleryImages: true,
     featured: true,
   },
 ];

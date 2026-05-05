@@ -12,15 +12,19 @@ export const metadata: Metadata = {
     'EPC services including STP, WTP, MEP and Interior solutions.',
 };
 
-
+const coreServiceSectionTitles: Record<string, string> = {
+  'industrial-epc': 'Industrial EPC',
+  mep: 'MEP',
+  interior: 'Interior design',
+};
 
 export default async function Services() {
   const services = await fetchServices();
   const grouped = {
-      "industrial-epc": services.filter(s => s.category === "Industrial EPC"),
-      "mep": services.filter(s => s.category === "MEP"),
-      "interior": services.filter(s => s.category === "Interior"),
-    };
+    "industrial-epc": services.filter(s => s.category === "Industrial EPC"),
+    "mep": services.filter(s => s.category === "MEP"),
+    "interior": services.filter(s => s.category === "Interior"),
+  };
   return (
     <main>
 
@@ -42,8 +46,12 @@ export default async function Services() {
           {Object.entries(grouped).map(([key, group]) => (
             <section key={key} id={key} className="scroll-mt-24 space-y-6">
               {/* SECTION TITLE */}
-              <h2 className="text-2xl font-bold text-slate-900 capitalize">
-                {key.replace('-', ' ')}
+              <h2 className="flex items-center gap-3 text-2xl font-bold text-slate-900">
+                <span
+                  className="h-[0.4em] w-[0.4em] shrink-0 rounded-full bg-current"
+                  aria-hidden
+                />
+                {coreServiceSectionTitles[key] ?? key.replace('-', ' ')}
               </h2>
               {/* ANIMATED LIST INSIDE */}
               <AnimatedList
