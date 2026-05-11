@@ -37,10 +37,13 @@ export function getResolvedGalleryAlbums(): ResolvedGalleryAlbum[] {
 }
 
 export function getGalleryImagesForProject(projectId: string): string[] {
-  const album = getResolvedGalleryAlbums().find(
-    (a) => a.projectId === projectId
-  );
-  return album?.images ?? [];
+  const imgs: string[] = [];
+  for (const a of getResolvedGalleryAlbums()) {
+    if (a.projectId === projectId && a.images.length > 0) {
+      imgs.push(...a.images);
+    }
+  }
+  return imgs;
 }
 
 export function enrichProjectsWithGallery(projects: Project[]): Project[] {

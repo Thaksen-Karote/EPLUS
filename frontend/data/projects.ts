@@ -27,7 +27,7 @@ export const projectsData: Project[] = [
     completionDate: '2023',
     budget: 'Confidential',
     scope: ['EPC Execution', 'Automation', 'Monitoring Systems'],
-    showGalleryImages: false,
+    showGalleryImages: true,
     featured: true,
   },
 
@@ -42,7 +42,7 @@ export const projectsData: Project[] = [
     completionDate: '2023',
     budget: 'Confidential',
     scope: ['Design', 'Execution', 'Testing', 'Commissioning'],
-    showGalleryImages: false,
+    showGalleryImages: true,
     featured: false,
   },
 
@@ -57,7 +57,22 @@ export const projectsData: Project[] = [
     completionDate: '2024',
     budget: 'Confidential',
     scope: ['Civil', 'Mechanical', 'Electrical', 'Automation'],
-    showGalleryImages: false,
+    showGalleryImages: true,
+    featured: true,
+  },
+
+  {
+    id: 'stp-25-manesar',
+    name: '25 MLD Sewage Treatment Plant',
+    category: 'STP',
+    client: 'Government Project',
+    location: 'Manesar, Gurugram, Haryana',
+    description: 'Large-scale 25 MLD STP project designed and executed with advanced treatment technologies, complete EPC scope and efficient wastewater management.',
+    image: '/projects/stp-manesar.jpg',
+    completionDate: '2024',
+    budget: 'Confidential',
+    scope: ['Design', 'Civil Works', 'Mechanical Installation', 'Electrical', 'Automation'],
+    showGalleryImages: true,
     featured: true,
   },
 
@@ -72,7 +87,7 @@ export const projectsData: Project[] = [
     completionDate: '2024',
     budget: 'Confidential',
     scope: ['Pipeline Network', 'STP Design', 'Execution'],
-    showGalleryImages: false,
+    showGalleryImages: true,
     featured: true,
   },
 
@@ -102,7 +117,7 @@ export const projectsData: Project[] = [
     completionDate: '2024',
     budget: 'Confidential',
     scope: ['11 KV Substation', 'Electrical Works', 'Power Distribution'],
-    showGalleryImages: false,
+    showGalleryImages: true,
     featured: false,
   },
 
@@ -117,7 +132,7 @@ export const projectsData: Project[] = [
     completionDate: '2023',
     budget: 'Confidential',
     scope: ['Electrical Works', 'Substation Setup', 'Line Installation'],
-    showGalleryImages: false,
+    showGalleryImages: true,
     featured: false,
   },
 
@@ -192,7 +207,7 @@ export const projectsData: Project[] = [
     completionDate: '2023',
     budget: 'Confidential',
     scope: ['Interior Design', 'Execution'],
-    showGalleryImages: false,
+    showGalleryImages: true,
     featured: false,
   },
 
