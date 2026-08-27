@@ -14,7 +14,7 @@ import { ApiResponse } from '@/types';
  *   email: string
  *   phone: string
  *   website?: string
- *   area: string (STP, WTP, MEP, Interior, etc.)
+ *   area: string (STP, WTP, MEPF, Interior, etc.)
  *   yearsOfExperience: number
  *   certifications: string
  *   message: string

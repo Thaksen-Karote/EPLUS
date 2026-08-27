@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Engineering Plus - EPC Solutions",
-  description: "Leading EPC company specializing in STP, WTP, MEP works, and interior solutions for offices, factories, and hotels.",
+  description: "Leading EPC company specializing in STP, WTP, MEPF works, and interior solutions for offices, factories, and hotels.",
 };
 
 export default function RootLayout({

@@ -6,21 +6,24 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useRouter } from 'next/navigation';
+import { ServiceCategory } from '@/types';
 
 interface ServiceCardProps {
   service: Service;
 }
-type ServiceCategory = 'Industrial EPC' | 'MEP' | 'Interior';
+
 const badgeColors: Record<ServiceCategory, string> = {
   'Industrial EPC': 'text-[var(--color-primary)]',
-  'MEP': 'text-[var(--color-secondary)]',
-  'Interior': 'text-[var(--color-quaternary)]',
+  MEPF: 'text-[var(--color-tertiary)]',
+  'Civil & Infrastructure': 'text-[var(--color-quaternary)]',
+  Interior: 'text-[var(--color-secondary)]',
 };
 
 const badgeBorder: Record<ServiceCategory, string> = {
   'Industrial EPC': 'border-[var(--color-primary)]/35',
-  'MEP': 'border-[var(--color-secondary)]/35',
-  'Interior': 'border-[var(--color-quaternary)]/35',
+  MEPF: 'border-[var(--color-tertiary)]/35',
+  'Civil & Infrastructure': 'border-[var(--color-quaternary)]/35',
+  Interior: 'border-[var(--color-secondary)]/35',
 };
 
 const ProjBadge = ({ category }: { category: ServiceCategory }) => {
@@ -85,10 +88,10 @@ export default function ServiceCard({ service }: ServiceCardProps) {
           </div>
 
           <Link
-            href="/contact#message"
+            href={`/contact?service=${encodeURIComponent(service.name)}#message`}
             className="group z-20 flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[var(--color-tertiary)] to-[var(--color-secondary)] px-4 py-3 text-sm font-semibold text-white shadow-md transition-all hover:shadow-lg md:absolute md:bottom-8 md:right-6 md:inline-flex md:w-auto md:py-2 md:justify-center"
           >
-            Explore Services
+            Ask a Question ?
             <ArrowRight className="size-4 shrink-0 group-hover:translate-x-1 transition-transform duration-300" aria-hidden />
           </Link>
         </div>

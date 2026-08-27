@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import HeroSlideshow from '@/components/HeroSlideshow';
 import { heroImagesByPage } from '@/data/hero-images';
 import SectionWrapper from "@/components/SectionWrapper";
@@ -8,11 +9,30 @@ import { submitContactForm } from "@/lib/api";
 import { ContactFormData } from "@/types";
 import {User,Mail,Phone,Building2,MessageSquare,Info,Send,Clock,MapPin,MailPlus,} from "lucide-react";
 
-export default function Contact() {
-  const [formData, setFormData] = useState<ContactFormData>({name: "", email: "", phone: "", company: "", subject: "", message: "",});
+function ContactFormInner() {
+  const searchParams = useSearchParams();
+  const serviceParam = searchParams.get("service") || searchParams.get("subject") || "";
+
+  const [formData, setFormData] = useState<ContactFormData>({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    subject: `Enquiry about ${serviceParam}`,
+    message: "",
+  });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+  useEffect(() => {
+    if (serviceParam) {
+      setFormData((prev) => ({
+        ...prev,
+        subject: `Enquiry about ${serviceParam}`,
+      }));
+    }
+  }, [serviceParam]);
 
   useEffect(() => {
     if (typeof window === "undefined" || window.location.hash !== "#message") return;
@@ -154,7 +174,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  placeholder="Tell us about your project..."
+                  placeholder={serviceParam ? `Ask question about ${serviceParam}` : "Ask us your question..."}
                   className="w-full pl-10 pr-4 py-3 rounded-lg bg-slate-100 border border-slate-300 text-slate-800 placeholder:text-slate-400 shadow-[inset_0_2px_6px_rgba(0,0,0,0.08)]  focus:ring-2 focus:ring-[var(--color-tertiary)] outline-none transition-all"
                 />
               </div>
@@ -246,5 +266,13 @@ export default function Contact() {
         </div>
       </SectionWrapper> */}
     </main>
+  );
+}
+
+export default function Contact() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ContactFormInner />
+    </Suspense>
   );
 }

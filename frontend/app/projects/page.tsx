@@ -6,7 +6,7 @@ import { enrichProjectsWithGallery } from '@/lib/gallery';
 export const metadata: Metadata = {
   title: 'Projects - Engineering Plus',
   description:
-    'Explore our portfolio of successful EPC projects across STP, WTP, MEP, and interior solutions.',
+    'Explore our portfolio of successful EPC projects across STP, WTP, MEPF, and interior solutions.',
 };
 
 export default async function ProjectsPage() {

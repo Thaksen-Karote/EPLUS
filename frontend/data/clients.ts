@@ -62,7 +62,7 @@ export const clientsData: Client[] = [
     name: 'Hotel Projects (Katra & Alwar)',
     industry: 'Hospitality',
     logo: '/logos/hotel.png',
-    description: 'Interior and MEP execution for hotel developments.',
+    description: 'Interior and MEPF execution for hotel developments.',
     projectsCompleted: 2,
   },
 ];

@@ -6,15 +6,15 @@ import ServiceCard from "@/components/ServiceCard";
 import ProjectCard from "@/components/ProjectCard";
 import { fetchServices, fetchFeaturedProjects } from "@/lib/api";
 import Link from "next/link";
-import { ShieldCheck, CircleCheckBig, Brain  } from "lucide-react";
+import { ShieldCheck, CircleCheckBig, Brain } from "lucide-react";
 import { Service } from '@/types';
 
 
 export const metadata: Metadata = {
   title: "Engineering Plus - EPC Solutions",
   description:
-    "Leading EPC company specializing in STP, WTP, MEP works, and interior solutions for offices, factories, and hotels.",
-  keywords: "EPC, STP, WTP, MEP, construction, engineering, water treatment",
+    "Leading EPC company specializing in STP, WTP, MEPF works, and interior solutions for offices, factories, and hotels.",
+  keywords: "EPC, STP, WTP, MEPF, construction, engineering, water treatment",
 };
 
 const homeServices: Service[] = [
@@ -29,13 +29,23 @@ const homeServices: Service[] = [
     benefits: [],
   },
   {
-    id: 'mep',
-    name: 'MEP Works',
-    category: 'MEP',
+    id: 'MEPF',
+    name: 'MEPF Works',
+    category: 'MEPF',
     description:
       'Comprehensive Mechanical, Electrical, and Plumbing services covering civil integration, electromechanical systems, fire protection, and automation to ensure reliable and efficient building infrastructure.',
     icon: 'Cog',
     color: 'text-yellow-500',
+    benefits: [],
+  },
+  {
+    id: 'civil-infrastructure',
+    name: 'Civil & Infrastructure',
+    category: 'Civil & Infrastructure',
+    description:
+      'Civil construction, structural RCC works, foundations, and site development with focus on safety, quality construction standards, and engineering precision.',
+    icon: 'Building',
+    color: 'text-pink-600',
     benefits: [],
   },
   {
@@ -62,7 +72,7 @@ export default async function Home() {
         images={heroImagesByPage.home}
         ariaLabel="Home hero"
         title="Engineering Solutions for Tomorrow"
-        subtitle="Comprehensive EPC services specializing in STP, WTP, MEP works, and interior solutions. Building excellence across India."
+        subtitle="Comprehensive EPC services specializing in STP, WTP, MEPF works, and interior solutions. Building excellence across India."
         ctaText="Explore Services"
         ctaLink="#services"
       />
@@ -77,11 +87,11 @@ export default async function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="relative bg-white/70 backdrop-blur-xl border border-gray-200 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group">
             {/* Background Icon (top-right, blur + fade) */}
-            <Brain  className="absolute top-4 right-4 w-28 h-28 text-[var(--color-secondary)] opacity-20 blur-[3px] group-hover:scale-110 transition-transform duration-300" />
+            <Brain className="absolute top-4 right-4 w-28 h-28 text-[var(--color-secondary)] opacity-20 blur-[3px] group-hover:scale-110 transition-transform duration-300" />
 
             {/* Foreground Icon */}
             <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-[var(--color-secondary)]/10 mb-4">
-              <Brain  className="w-6 h-6 text-[var(--color-secondary)] group-hover:scale-110 transition-transform duration-300" />
+              <Brain className="w-6 h-6 text-[var(--color-secondary)] group-hover:scale-110 transition-transform duration-300" />
             </div>
 
             {/* Title */}

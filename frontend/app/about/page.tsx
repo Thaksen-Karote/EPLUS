@@ -18,7 +18,7 @@ import CertificationCards from '@/components/CertificationCards';
 export const metadata: Metadata = {
   title: 'About Engineering Plus',
   description:
-    'Engineering Plus is an EPC company specializing in STP, WTP, MEP and Interior solutions.',
+    'Engineering Plus is an EPC company specializing in STP, WTP, MEPF and Interior solutions.',
 };
 
 export default function About() {
@@ -44,7 +44,7 @@ export default function About() {
           <div>
             <p className="text-slate-600 mb-4 leading-relaxed">
               Engineering Plus is an EPC (Engineering, Procurement & Construction)
-              company specializing in STP, WTP, MEP works and Interior solutions.
+              company specializing in STP, WTP, MEPF works and Interior solutions.
               We deliver end-to-end project execution from design to commissioning.
             </p>
 
@@ -162,7 +162,7 @@ export default function About() {
           {[
             { Icon: Building2, label: 'STP Projects' },
             { Icon: Wrench, label: 'WTP Systems' },
-            { Icon: Wrench, label: 'MEP Works' },
+            { Icon: Wrench, label: 'MEPF Works' },
             { Icon: Building2, label: 'Interior Solutions' },
           ].map((item, i) => (
             <div

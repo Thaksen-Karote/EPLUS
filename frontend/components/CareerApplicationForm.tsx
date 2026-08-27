@@ -125,7 +125,7 @@ export default function CareerApplicationForm() {
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Two Column Grid Layout */}
         <div className="grid lg:grid-cols-2 gap-8">
-          
+
           {/* LEFT COLUMN - Personal Details & Cover Note */}
           <div className="space-y-6">
             {/* Personal Details */}
@@ -224,7 +224,7 @@ export default function CareerApplicationForm() {
                 <option value="Mechanical Engineer">Mechanical Engineer</option>
                 <option value="Electrical Engineer">Electrical Engineer</option>
                 <option value="STP/WTP Design Engineer">STP/WTP Design Engineer</option>
-                <option value="MEP Engineer">MEP Engineer</option>
+                <option value="MEPF Engineer">MEPF Engineer</option>
                 <option value="Interior Designer">Interior Designer</option>
                 <option value="Site Supervisor">Site Supervisor</option>
                 <option value="Quality Control Engineer">Quality Control Engineer</option>

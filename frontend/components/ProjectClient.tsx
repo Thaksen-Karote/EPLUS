@@ -133,10 +133,9 @@ export default function ProjectsClient({ projects }: any) {
             type="button"
             onClick={() => setTab('completed')}
             className={`relative z-10 px-5 py-2 rounded-lg text-sm font-semibold transition-colors
-              ${
-                tab === 'completed'
-                  ? 'text-white'
-                  : 'text-slate-700 hover:bg-slate-100/80'
+              ${tab === 'completed'
+                ? 'text-white'
+                : 'text-slate-700 hover:bg-slate-100/80'
               }`}
           >
             Completed
@@ -147,10 +146,9 @@ export default function ProjectsClient({ projects }: any) {
             type="button"
             onClick={() => setTab('ongoing')}
             className={`relative z-10 px-5 py-2 rounded-lg text-sm font-semibold transition-colors
-              ${
-                tab === 'ongoing'
-                  ? 'text-white'
-                  : 'text-slate-700 hover:bg-slate-100/80'
+              ${tab === 'ongoing'
+                ? 'text-white'
+                : 'text-slate-700 hover:bg-slate-100/80'
               }`}
           >
             Ongoing
@@ -192,7 +190,7 @@ export default function ProjectsClient({ projects }: any) {
 
           {[
             { category: 'STP', count: '6+', color: 'bg-slate-100 text-blue-600' },
-            { category: 'MEP', count: '3+', color: 'bg-slate-100 text-purple-600' },
+            { category: 'MEPF', count: '3+', color: 'bg-slate-100 text-purple-600' },
             { category: 'Interior', count: '3+', color: 'bg-slate-100 text-amber-600' },
             { category: 'Others', count: '2+', color: 'bg-slate-100 text-cyan-600' },
           ].map((cat, index) => (
@@ -231,28 +229,26 @@ export default function ProjectsClient({ projects }: any) {
           ].map((item, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-lg border border-slate-200 p-6 bg-white shadow-sm hover:shadow-lg transition-all duration-300"
+              className="relative overflow-hidden rounded-lg border border-slate-200 p-6 bg-white shadow-sm hover:shadow-md transition-all duration-300"
             >
-              {/* GRADIENT HOVER BACKGROUND */}
-              <div className="absolute inset-0 translate-y-full group-hover:translate-y-0 transition-transform duration-500 bg-gradient-to-br from-[var(--color-quaternary)] to-[var(--color-tertiary)]" />
               {/* CONTENT */}
-              <div className="relative z-10 transition-colors duration-300 group-hover:text-white">
-          
+              <div className="relative z-10">
+
                 {/* ICON */}
-                <item.Icon className="w-8 h-8 mb-4 text-[var(--color-quaternary)] group-hover:text-white transition-colors" />
-          
+                <item.Icon className="w-8 h-8 mb-4 text-[var(--color-quaternary)]" />
+
                 {/* TITLE */}
-                <h3 className="text-lg text-slate-800 group-hover:text-white font-semibold mb-2">
+                <h3 className="text-lg text-slate-800 font-semibold mb-2">
                   {item.title}
                 </h3>
-          
+
                 {/* DESC */}
-                <p className="text-sm text-slate-600 group-hover:text-white/90 leading-relaxed">
+                <p className="text-sm text-slate-600 leading-relaxed">
                   {item.desc}
                 </p>
-          
+
               </div>
-          
+
             </div>
           ))}
 

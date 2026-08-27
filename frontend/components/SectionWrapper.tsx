@@ -4,6 +4,7 @@ interface SectionWrapperProps {
   children: React.ReactNode;
   bgColor?: 'white' | 'gray' | 'dark';
   id?: string;
+  containerClassName?: string;
 }
 
 export default function SectionWrapper({
@@ -12,6 +13,7 @@ export default function SectionWrapper({
   children,
   bgColor = 'white',
   id,
+  containerClassName,
 }: SectionWrapperProps) {
   const bgClasses = {
     white: 'bg-white',
@@ -21,7 +23,7 @@ export default function SectionWrapper({
 
   return (
     <section id={id} className={`${bgClasses[bgColor]} py-16 sm:py-20 md:py-24`}>
-      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-2">
+      <div className={`mx-auto px-4 sm:px-6 lg:px-8 ${containerClassName || 'max-w-7xl'}`}>
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-4 ${
@@ -30,7 +32,7 @@ export default function SectionWrapper({
             {title}
           </h2>
           {subtitle && (
-            <p className={`text-lg sm:text-xl max-w-2xl mx-auto ${
+            <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
               bgColor === 'dark' ? 'text-gray-300' : 'text-gray-600'
             }`}>
               {subtitle}

@@ -2,7 +2,7 @@
 export interface Project {
   id: string;
   name: string;
-  category: 'STP' | 'WTP' | 'MEP' | 'Interior';
+  category: 'STP' | 'WTP' | 'MEPF' | 'Interior';
   client: string;
   location: string;
   description: string;
@@ -18,6 +18,12 @@ export interface Project {
 }
 
 // Service types
+export type ServiceCategory =
+  | 'Industrial EPC'
+  | 'MEPF'
+  | 'Civil & Infrastructure'
+  | 'Interior';
+
 export interface Service {
   id: string;
   name: string;
@@ -25,7 +31,7 @@ export interface Service {
   icon: string;
   benefits: string[];
   color: string;
-  category: 'Industrial EPC' | 'MEP' | 'Interior'
+  category: ServiceCategory;
 }
 
 // Client types

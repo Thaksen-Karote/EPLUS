@@ -21,7 +21,7 @@ export default function CareersPage() {
             {
               Icon: Briefcase,
               title: 'Diverse Projects',
-              desc: 'Work on challenging STP, WTP, MEP and interior projects across sectors',
+              desc: 'Work on challenging STP, WTP, MEPF and interior projects across sectors',
             },
             {
               Icon: TrendingUp,

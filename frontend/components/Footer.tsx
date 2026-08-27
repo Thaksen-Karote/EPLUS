@@ -17,10 +17,10 @@ export default function Footer() {
       { label: 'Careers', href: '/careers' },
     ],
     Services: [
-      { label: 'STP Solutions', href: '/services#industrial-epc' },
-      { label: 'WTP Solutions', href: '/services#industrial-epc' },
-      { label: 'MEP Works', href: '/services#mep' },
-      { label: 'Interior Solutions', href: '/services#interior' },
+      { label: 'Industrial EPC', href: '/services#industrial-epc' },
+      { label: 'MEPF Works', href: '/services#mepf' },
+      { label: 'Civil & Infrastructure', href: '/services#civil-infrastructure' },
+      { label: 'Interior Design', href: '/services#interior' },
     ],
     Support: [
       { label: 'Contact Us', href: '/contact' },
@@ -40,16 +40,16 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-0">
               <div className="w-100 h-50 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg"><Image
-                        src="/EPLUS.svg"
-                        alt="Engineering Plus Logo"
-                        width={300}
-                        height={250}
-                        className="object-contain"
-                      /></span>
+                  src="/EPLUS.svg"
+                  alt="Engineering Plus Logo"
+                  width={300}
+                  height={250}
+                  className="object-contain"
+                /></span>
               </div>
             </div>
             <p className="text-gray-400 text-sm">
-              Leading EPC solutions for STP, WTP, MEP, and Interior works across India.
+              Leading EPC solutions for STP, WTP, MEPF, and Interior works across India.
             </p>
             <div className="flex gap-4 mt-4">
 
@@ -57,12 +57,12 @@ export default function Footer() {
               <Link href={COMING_SOON_PATH} className="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-gray-500 hover:bg-[var(--color-primary)] hover:text-white transition-all duration-300" aria-label="Facebook — coming soon">
                 <FaFacebookF className="w-4 h-4" />
               </Link>
-              
+
               {/* TWITTER (X) */}
               <Link href={COMING_SOON_PATH} className="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-gray-500 hover:bg-[var(--color-secondary)] hover:text-white transition-all duration-300" aria-label="X (Twitter) — coming soon">
                 <FaTwitter className="w-4 h-4" />
               </Link>
-              
+
               {/* LINKEDIN */}
               <Link href={COMING_SOON_PATH} className="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-gray-500 hover:bg-[var(--color-tertiary)] hover:text-white transition-all duration-300" aria-label="LinkedIn — coming soon">
                 <FaLinkedinIn className="w-4 h-4" />

@@ -9,7 +9,7 @@ export const faqsData: FAQ[] = [
   {
     id: 'faq-1',
     question: 'What services does Engineering Plus provide?',
-    answer: 'Engineering Plus is a comprehensive EPC (Engineering, Procurement & Construction) company specializing in STP (Sewage Treatment Plants), WTP (Water Treatment Plants), MEP (Mechanical, Electrical & Plumbing) works, and Interior solutions. We handle complete project execution from design to commissioning.',
+    answer: 'Engineering Plus is a comprehensive EPC (Engineering, Procurement & Construction) company specializing in STP (Sewage Treatment Plants), WTP (Water Treatment Plants), MEPF (Mechanical, Electrical & Plumbing) works, and Interior solutions. We handle complete project execution from design to commissioning.',
     category: 'services',
   },
   {

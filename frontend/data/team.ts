@@ -27,12 +27,12 @@ export const teamData: TeamMember[] = [
   {
     id: 'amit-verma',
     name: 'Amit Verma',
-    position: 'MEP Head',
-    department: 'MEP Division',
-    bio: 'Amit brings extensive experience in MEP services with a focus on electromechanical systems and automation. His team has executed MEP works for numerous commercial and industrial facilities.',
+    position: 'MEPF Head',
+    department: 'MEPF Division',
+    bio: 'Amit brings extensive experience in MEPF services with a focus on electromechanical systems and automation. His team has executed MEPF works for numerous commercial and industrial facilities.',
     image: '/team/amit-verma.jpg',
     email: 'amit.verma@engineeringplus.com',
-    expertise: ['MEP Systems', 'HVAC Design', 'Electrical Systems', 'Automation'],
+    expertise: ['MEPF Systems', 'HVAC Design', 'Electrical Systems', 'Automation'],
     experience: '12+ years',
   },
   {
