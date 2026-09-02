@@ -6,9 +6,8 @@ import ServiceCard from "@/components/ServiceCard";
 import ProjectCard from "@/components/ProjectCard";
 import { fetchServices, fetchFeaturedProjects } from "@/lib/api";
 import Link from "next/link";
-import { ShieldCheck, CircleCheckBig, Brain } from "lucide-react";
+import { ShieldCheck, CircleCheckBig, Brain, Workflow } from "lucide-react";
 import { Service } from '@/types';
-
 
 export const metadata: Metadata = {
   title: "Engineering Plus - EPC Solutions",
@@ -48,16 +47,16 @@ const homeServices: Service[] = [
     color: 'text-pink-600',
     benefits: [],
   },
-  {
-    id: 'interior',
-    name: 'Interior Solutions',
-    category: 'Interior',
-    description:
-      'Turnkey interior design and execution for offices, hotels, and cafes, combining functionality, aesthetics, and high-quality materials to deliver modern and efficient spaces.',
-    icon: 'LampCeilingIcon',
-    color: 'text-purple-500',
-    benefits: [],
-  },
+  // {
+  //   id: 'interior',
+  //   name: 'Interior Solutions',
+  //   category: 'Interior',
+  //   description:
+  //     'Turnkey interior design and execution for offices, hotels, and cafes, combining functionality, aesthetics, and high-quality materials to deliver modern and efficient spaces.',
+  //   icon: 'LampCeilingIcon',
+  //   color: 'text-purple-500',
+  //   benefits: [],
+  // },
 ];
 
 export default async function Home() {
@@ -83,11 +82,12 @@ export default async function Home() {
         title="Why Engineering Plus"
         subtitle="We deliver comprehensive engineering, procurement, and construction solutions with a focus on quality and innovation"
         bgColor="gray"
+        containerClassName="max-w-[1500px]"
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="relative bg-white/70 backdrop-blur-xl border border-gray-200 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group">
             {/* Background Icon (top-right, blur + fade) */}
-            <Brain className="absolute top-4 right-4 w-28 h-28 text-[var(--color-secondary)] opacity-20 blur-[3px] group-hover:scale-110 transition-transform duration-300" />
+            <Brain className="absolute top-4 right-4 w-20 h-20 text-[var(--color-secondary)] opacity-20 blur-[3px] group-hover:scale-110 transition-transform duration-300" />
 
             {/* Foreground Icon */}
             <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-[var(--color-secondary)]/10 mb-4">
@@ -105,9 +105,10 @@ export default async function Home() {
               projects across various sectors.
             </p>
           </div>
+
           <div className="relative bg-white/70 backdrop-blur-xl border border-gray-200 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group">
             {/* Background Icon (top-right, blur + fade) */}
-            <CircleCheckBig className="absolute top-4 right-4 w-28 h-28 text-[var(--color-quaternary)] opacity-20 blur-[3px] group-hover:scale-110 transition-transform duration-300" />
+            <CircleCheckBig className="absolute top-4 right-4 w-20 h-20 text-[var(--color-quaternary)] opacity-20 blur-[3px] group-hover:scale-110 transition-transform duration-300" />
 
             {/* Foreground Icon */}
             <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-[var(--color-quaternary)]/10 mb-4">
@@ -125,9 +126,10 @@ export default async function Home() {
               industrial, hospitality, and residential sectors.
             </p>
           </div>
+
           <div className="relative bg-white/70 backdrop-blur-xl border border-gray-200 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group">
             {/* Background Icon (top-right, blur + fade) */}
-            <ShieldCheck className="absolute top-4 right-4 w-28 h-28 text-[var(--color-tertiary)] opacity-20 blur-[3px] group-hover:scale-110 transition-transform duration-300" />
+            <ShieldCheck className="absolute top-4 right-4 w-20 h-20 text-[var(--color-tertiary)] opacity-20 blur-[3px] group-hover:scale-110 transition-transform duration-300" />
 
             {/* Foreground Icon */}
             <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-[var(--color-tertiary)]/10 mb-4">
@@ -143,6 +145,26 @@ export default async function Home() {
             <p className="text-gray-600 leading-relaxed">
               Stringent quality checks at every stage ensuring compliance with
               international standards and regulations.
+            </p>
+          </div>
+
+          <div className="relative bg-white/70 backdrop-blur-xl border border-gray-200 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group">
+            {/* Background Icon (top-right, blur + fade) */}
+            <Workflow className="absolute top-4 right-4 w-20 h-20 text-[var(--color-primary)] opacity-20 blur-[3px] group-hover:scale-110 transition-transform duration-300" />
+
+            {/* Foreground Icon */}
+            <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-[var(--color-primary)]/10 mb-4">
+              <Workflow className="w-6 h-6 text-[var(--color-primary)] group-hover:scale-110 transition-transform duration-300" />
+            </div>
+
+            {/* Title */}
+            <h3 className="text-xl font-bold text-gray-800 mt-2 mb-2">
+              End-to-End Solutions
+            </h3>
+
+            {/* Description */}
+            <p className="text-gray-600 leading-relaxed">
+              Integrated capabilities across engineering, procurement, MEPF, civil infrastructure, construction, and commissioning.
             </p>
           </div>
         </div>
@@ -169,10 +191,10 @@ export default async function Home() {
         </div>
       </SectionWrapper>
 
-      {/* Featured Projects */}
+      {/* Our Projects */}
       <SectionWrapper
-        title="Featured Projects"
-        subtitle="Showcase of our successful implementations across different sectors"
+        title="Our Projects"
+        subtitle="From water and wastewater treatment to industrial and commercial developments, we deliver projects across diverse sectors with a focus on quality, coordination, and reliable execution."
         bgColor="gray"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">

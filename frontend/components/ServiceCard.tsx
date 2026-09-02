@@ -29,7 +29,7 @@ const badgeBorder: Record<ServiceCategory, string> = {
 const ProjBadge = ({ category }: { category: ServiceCategory }) => {
   return (
     <span
-      className={`rounded-full border px-3 py-1 text-[10px] font-semibold uppercase whitespace-nowrap bg-slate-100 shadow-inner ${badgeBorder[category]} ${badgeColors[category]}`}
+      className={`inline-flex items-center rounded-full border px-3 py-1 text-[10px] font-semibold uppercase whitespace-nowrap bg-slate-100 shadow-inner max-w-fit ${badgeBorder[category]} ${badgeColors[category]}`}
     >
       {category}
     </span>
@@ -45,20 +45,22 @@ export default function ServiceCard({ service }: ServiceCardProps) {
   if (pathname.startsWith("/services")) {
     return (
       <div className="relative overflow-hidden rounded-lg border border-gray-100 bg-slate-100 p-0 shadow-lg transition-all hover:shadow-lg">
-        <div className="relative z-10 flex flex-col gap-8 p-8 pb-8 md:pb-14">
+        <div className="relative z-10 flex flex-col gap-8 p-5 sm:p-8 pb-8 md:pb-14">
           <div className="flex flex-col gap-8 md:flex-row">
             {/* LEFT SIDE */}
             <div className="flex-1 space-y-4">
-              <div className="flex items-center gap-4">
+              <div className="flex items-start gap-4">
                 {IconComponent && (
-                  <IconComponent className={`w-10 h-10 ${service.color}`} />
+                  <IconComponent className={`w-10 h-10 shrink-0 ${service.color}`} />
                 )}
 
-                <div className="flex items-center gap-3">
-                  <h3 className="text-2xl font-bold text-gray-900">
+                <div className="flex-1 min-w-0 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-3">
+                  <h3 className="text-2xl font-bold text-gray-900 w-full sm:w-auto">
                     {service.name}
                   </h3>
-                  <ProjBadge category={service.category} />
+                  <div className="shrink-0">
+                    <ProjBadge category={service.category} />
+                  </div>
                 </div>
               </div>
 

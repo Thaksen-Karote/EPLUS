@@ -42,6 +42,8 @@ export interface Client {
   logo: string;
   description: string;
   projectsCompleted: number;
+  location?: string;
+  keyProjects?: string[];
 }
 
 // Team member types

@@ -7,7 +7,7 @@ import { heroImagesByPage } from '@/data/hero-images';
 import SectionWrapper from "@/components/SectionWrapper";
 import { submitContactForm } from "@/lib/api";
 import { ContactFormData } from "@/types";
-import {User,Mail,Phone,Building2,MessageSquare,Info,Send,Clock,MapPin,MailPlus,} from "lucide-react";
+import {User,Mail,Phone,Building2,MessageSquare,Info,Send,Clock,MapPin,} from "lucide-react";
 
 function ContactFormInner() {
   const searchParams = useSearchParams();
@@ -18,7 +18,7 @@ function ContactFormInner() {
     email: "",
     phone: "",
     company: "",
-    subject: `Enquiry about ${serviceParam}`,
+    subject: serviceParam ? `Enquiry about ${serviceParam}` : "",
     message: "",
   });
 
@@ -247,8 +247,8 @@ function ContactFormInner() {
              <Clock className="w-6 h-6 text-[var(--color-quaternary)] transition-all duration-300 group-hover:-translate-y-1 group-hover:scale-110" />
              <div>
                <p className="text-sm font-semibold text-slate-900 uppercase tracking-wide">Business Hours</p>
-               <p className="text-slate-600">Mon - Fri: 10:00 AM - 6:00 PM</p>
-               <p className="text-slate-600">Sat: 10:00 AM - 4:00 PM</p>
+               <p className="text-slate-600">Mon - Sat: 10:00 AM - 6:00 PM</p>
+               {/* <p className="text-slate-600">Sat: 10:00 AM - 4:00 PM</p> */}
              </div>
            </div>
           </div>

@@ -3,115 +3,138 @@ import HeroSlideshow from '@/components/HeroSlideshow';
 import { heroImagesByPage } from '@/data/hero-images';
 import SectionWrapper from '@/components/SectionWrapper';
 import { clientsData } from '@/data/clients';
-import { Building2 } from 'lucide-react';
+import ClientCard from '@/components/ClientCard';
+import { Globe2, Layers, ShieldCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Clients - Engineering Plus',
-  description: 'Our clients across infrastructure, energy and hospitality sectors.',
+  title: 'Our Clients - Engineering Plus',
+  description:
+    'Trusted by government agencies, power utilities, municipal corporations, and enterprise leaders across India for EPC, PHD, and Waste Water solutions.',
 };
 
 export default function ClientsPage() {
   return (
-    <main>
-
+    <main className="bg-slate-50 min-h-screen">
       {/* HERO */}
       <HeroSlideshow
         images={heroImagesByPage.clients}
         ariaLabel="Clients hero"
-        title="Our Clients"
-        subtitle="Trusted by organizations across industries"
+        title="Our Clients & Partners"
+        subtitle="Delivering excellence for government bodies, public sector undertakings, and leading private enterprises"
       />
+
+      {/* SECTOR & GEOGRAPHIC HIGHLIGHTS */}
+      <SectionWrapper
+        title="Key Sectors & National Reach"
+        subtitle="Turnkey execution capabilities tailored for specialized industries across India"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
+          <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
+            <div className="w-12 h-12 rounded-lg bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary)] mb-4">
+              <Layers className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-slate-900 mb-2">
+              Industry Sectors
+            </h3>
+            <p className="text-sm text-slate-600 leading-relaxed mb-3">
+              Specialized execution in <strong>Industrial EPC</strong>, <strong>PHD (Public Health Dept.)</strong>, <strong>Waste Water Treatment</strong>, <strong>Power Generation</strong>, and <strong>Commercial Infrastructure</strong>.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {['Industrial EPC', 'PHD Works', 'Waste Water (STP/WTP)', 'Power & Energy'].map((tag) => (
+                <span key={tag} className="text-xs font-semibold px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 border border-slate-200">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
+            <div className="w-12 h-12 rounded-lg bg-[var(--color-tertiary)]/10 flex items-center justify-center text-[var(--color-tertiary)] mb-4">
+              <Globe2 className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-slate-900 mb-2">
+              Pan-India Presence
+            </h3>
+            <p className="text-sm text-slate-600 leading-relaxed mb-3">
+              Proven operational capability executing multi-crore infrastructure projects across <strong>Haryana</strong>, <strong>Uttar Pradesh</strong>, <strong>Odisha</strong>, and <strong>NCR Region</strong>.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {['Haryana', 'Uttar Pradesh', 'Odisha', 'NCR Region'].map((tag) => (
+                <span key={tag} className="text-xs font-semibold px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 border border-slate-200">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
+            <div className="w-12 h-12 rounded-lg bg-[var(--color-secondary)]/10 flex items-center justify-center text-[var(--color-secondary)] mb-4">
+              <ShieldCheck className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-slate-900 mb-2">
+              Turnkey Compliance
+            </h3>
+            <p className="text-sm text-slate-600 leading-relaxed mb-3">
+              Strict adherence to <strong>CPCB</strong>, <strong>SPCB</strong>, and environmental safety norms with end-to-end commissioning and substation integrations.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {['CPCB Standards', 'STP / WTP', '11 KV Substations', 'Turnkey EPC'].map((tag) => (
+                <span key={tag} className="text-xs font-semibold px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 border border-slate-200">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </SectionWrapper>
 
       {/* CLIENT GRID */}
       <SectionWrapper
-        title="Key Clients"
-        subtitle="Partnerships built on trust and performance"
+        title="Key Clients & Projects"
+        subtitle="Our esteemed clientele including GMDA, MCK, UPRVUNL, NTPC, DLF, KEC, and PHD"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
           {clientsData.map((client) => (
-            <div
-              key={client.id}
-              className="group relative bg-white border border-slate-200 rounded-lg p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-            >
-
-              {/* TOP ACCENT */}
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)]" />
-
-              {/* LOGO / ICON */}
-              <div className="w-14 h-14 mb-4 flex items-center justify-center rounded-lg bg-slate-100 group-hover:bg-[var(--color-primary)]/10 transition-colors">
-                <Building2 className="w-6 h-6 text-[var(--color-primary)]" />
-              </div>
-
-              {/* NAME */}
-              <h3 className="text-lg font-bold text-slate-900 mb-1">
-                {client.name}
-              </h3>
-
-              {/* INDUSTRY */}
-              <p className="text-xs font-semibold text-slate-500 mb-3 uppercase tracking-wide">
-                {client.industry}
-              </p>
-
-              {/* DESCRIPTION */}
-              <p className="text-sm text-slate-600 mb-4 leading-relaxed">
-                {client.description}
-              </p>
-
-              {/* PROJECT COUNT */}
-              <div className="flex items-center justify-between border-t pt-3 text-sm">
-                <span className="text-slate-500">
-                  Projects Delivered
-                </span>
-                <span className="font-semibold text-slate-900">
-                  {client.projectsCompleted}+
-                </span>
-              </div>
-
-            </div>
+            <ClientCard key={client.id} client={client} />
           ))}
-
         </div>
       </SectionWrapper>
 
       {/* TRUST SECTION */}
       <SectionWrapper
-        title="Why Clients Trust Us"
-        subtitle="Delivering consistent results across projects"
+        title="Why Enterprise Clients Choose Engineering Plus"
+        subtitle="Delivering high-reliability EPC solutions on time and within budget"
         bgColor="gray"
       >
         <div className="grid md:grid-cols-3 gap-6">
-
           {[
             {
-              title: 'Reliable Delivery',
-              desc: 'Projects completed within timeline and scope',
+              title: 'Turnkey EPC Execution',
+              desc: 'Comprehensive end-to-end scope from civil construction and mechanical piping to electrical 11 KV substations and SCADA automation.',
             },
             {
-              title: 'Technical Expertise',
-              desc: 'Strong engineering and execution capabilities',
+              title: 'Multi-Sector Expertise',
+              desc: 'Specialized focus in high-capacity Sewage Treatment Plants (STP), Water Treatment (WTP), MEPF, and interior infrastructure.',
             },
             {
-              title: 'Quality Focus',
-              desc: 'Strict adherence to standards and compliance',
+              title: 'Pan-India Footprint',
+              desc: 'Proven track record executing projects for government authorities, power stations, and corporate leaders across multiple states.',
             },
           ].map((item, i) => (
             <div
               key={i}
-              className="bg-white border border-slate-200 rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-all"
+              className="bg-white border border-slate-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-all"
             >
-              <h4 className="font-semibold text-slate-900 mb-2">
+              <h4 className="font-bold text-slate-900 text-lg mb-2">
                 {item.title}
               </h4>
-              <p className="text-sm text-slate-600">
+              <p className="text-sm text-slate-600 leading-relaxed">
                 {item.desc}
               </p>
             </div>
           ))}
-
         </div>
       </SectionWrapper>
-
     </main>
   );
 }

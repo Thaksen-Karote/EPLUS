@@ -1,15 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGlobe } from 'react-icons/fa';
-import { COMING_SOON_PATH } from '@/lib/routes';
+
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   const footerLinks = {
     Company: [
       { label: 'About Us', href: '/about' },
-      { label: 'Team', href: '/team' },
       { label: 'Services', href: '/services' },
       { label: 'Projects', href: '/projects' },
       { label: 'Gallery', href: '/gallery' },
@@ -25,8 +21,6 @@ export default function Footer() {
     Support: [
       { label: 'Contact Us', href: '/contact' },
       { label: 'FAQ', href: '/about#faq' },
-      { label: 'Documentation', href: COMING_SOON_PATH },
-      { label: 'Blog', href: COMING_SOON_PATH },
     ],
   };
 
@@ -37,43 +31,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-2 mb-0">
-              <div className="w-100 h-50 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg"><Image
-                  src="/EPLUS.svg"
-                  alt="Engineering Plus Logo"
-                  width={300}
-                  height={250}
-                  className="object-contain"
-                /></span>
-              </div>
-            </div>
+            <Link href="/" className="inline-block hover:opacity-90 transition-opacity cursor-pointer mb-2" aria-label="Engineering Plus — Home">
+              <Image
+                src="/EPLUS.svg"
+                alt="Engineering Plus Logo"
+                width={300}
+                height={250}
+                className="object-contain"
+              />
+            </Link>
             <p className="text-gray-400 text-sm">
               Leading EPC solutions for STP, WTP, MEPF, and Interior works across India.
             </p>
-            <div className="flex gap-4 mt-4">
-
-              {/* FACEBOOK */}
-              <Link href={COMING_SOON_PATH} className="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-gray-500 hover:bg-[var(--color-primary)] hover:text-white transition-all duration-300" aria-label="Facebook — coming soon">
-                <FaFacebookF className="w-4 h-4" />
-              </Link>
-
-              {/* TWITTER (X) */}
-              <Link href={COMING_SOON_PATH} className="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-gray-500 hover:bg-[var(--color-secondary)] hover:text-white transition-all duration-300" aria-label="X (Twitter) — coming soon">
-                <FaTwitter className="w-4 h-4" />
-              </Link>
-
-              {/* LINKEDIN */}
-              <Link href={COMING_SOON_PATH} className="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-gray-500 hover:bg-[var(--color-tertiary)] hover:text-white transition-all duration-300" aria-label="LinkedIn — coming soon">
-                <FaLinkedinIn className="w-4 h-4" />
-              </Link>
-
-              {/* WEBSITE */}
-              <a href="https://www.engineeringplus.co.in" className="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-gray-500 hover:bg-[var(--color-quaternary)] hover:text-white transition-all duration-300">
-                <FaGlobe className="w-4 h-4" />
-              </a>
-
-            </div>
           </div>
 
           {/* Footer Links */}
@@ -101,19 +70,8 @@ export default function Footer() {
           {/* Bottom Section */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Engineering Plus. All rights reserved.
+              Copyright © 2025 Engineering Plus - All Rights Reserved.
             </p>
-            <div className="flex gap-6 text-sm">
-              <Link href={COMING_SOON_PATH} className="text-gray-400 hover:text-white transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href={COMING_SOON_PATH} className="text-gray-400 hover:text-white transition-colors">
-                Terms of Service
-              </Link>
-              <Link href={COMING_SOON_PATH} className="text-gray-400 hover:text-white transition-colors">
-                Cookie Policy
-              </Link>
-            </div>
           </div>
         </div>
       </div>

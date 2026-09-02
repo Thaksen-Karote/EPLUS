@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import HeroSlideshow from '@/components/HeroSlideshow';
 import { heroImagesByPage } from '@/data/hero-images';
 import SectionWrapper from '@/components/SectionWrapper';
@@ -61,8 +62,14 @@ export default function About() {
           </div>
 
           {/* VISUAL */}
-          <div className="relative bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-tertiary)] rounded-lg h-80 flex items-center justify-center text-white font-semibold">
-            EPC Solutions
+          <div className="relative rounded-lg h-80 overflow-hidden shadow-lg border border-slate-200">
+            <Image
+              src="/Hero/AboutImage.jpeg"
+              alt="EPC Solutions"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
 
         </div>
@@ -179,12 +186,12 @@ export default function About() {
       </SectionWrapper>
 
       {/* CERTIFICATIONS & CREDENTIALS */}
-      <SectionWrapper
+      {/* <SectionWrapper
         title="Certifications & Credentials"
         subtitle="Committed to quality, safety, and environmental standards"
       >
         <CertificationCards />
-      </SectionWrapper>
+      </SectionWrapper> */}
 
       {/* 🔥 FAQ SECTION */}
       <FAQSection />

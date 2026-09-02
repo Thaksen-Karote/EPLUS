@@ -56,7 +56,7 @@ export default function ProjectCard({
   // HOME CARD (same as current but WITHOUT button)
   if (variant === 'home') {
     return (
-      <div className="group bg-white rounded-lg overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
+      <div className="group bg-white rounded-lg overflow-hidden border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col">
 
         {/* HEADER */}
         <div className="relative h-44 w-full overflow-hidden">
@@ -94,7 +94,7 @@ export default function ProjectCard({
   // PROJECTS PAGE CARD (FULL WIDTH)
   return (
     <>
-    <div className="min-h-[300px] relative group bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col md:flex-row">
+    <div className="min-h-[300px] relative group bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col md:flex-row">
       {/* LEFT SIDE (gallery / hero image / gradient) */}
       <div className="relative md:w-[40%] h-52 md:min-h-[240px] md:h-auto overflow-hidden bg-slate-100">
         {slides.length > 0 ? (
@@ -195,9 +195,9 @@ export default function ProjectCard({
           </span>
         </div>
 
-        <p className="text-xs text-slate-500 mb-3">
+        {/* <p className="text-xs text-slate-500 mb-3">
           <strong className="text-slate-700">Budget:</strong> {project.budget}
-        </p>
+        </p> */}
 
         <div className="flex flex-wrap gap-2">
           {project.scope.slice(0, 3).map((item, index) => (

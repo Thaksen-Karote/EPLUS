@@ -80,8 +80,8 @@ export default function ProjectsClient({ projects }: any) {
         ? 'bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-quaternary)]'
         : 'bg-gradient-to-l from-[var(--color-primary)] to-[var(--color-quaternary)]'
       : navDir === 1
-        ? 'bg-gradient-to-r from-[var(--color-quaternary)] to-[var(--color-primary)]'
-        : 'bg-gradient-to-l from-[var(--color-quaternary)] to-[var(--color-primary)]';
+        ? 'bg-gradient-to-l from-[var(--color-quaternary)] to-[var(--color-primary)]'
+        : 'bg-gradient-to-r from-[var(--color-quaternary)] to-[var(--color-primary)]';
 
   return (
     <main>

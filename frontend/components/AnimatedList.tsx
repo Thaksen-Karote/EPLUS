@@ -20,6 +20,7 @@ const AnimatedItem = ({
   index,
   onMouseEnter,
   onClick,
+  isClickable,
 }: any) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: false });
@@ -29,11 +30,11 @@ const AnimatedItem = ({
       ref={ref}
       data-index={index}
       onMouseEnter={onMouseEnter}
-      onClick={onClick}
+      onClick={isClickable ? onClick : undefined}
       initial={{ scale: 0.8, opacity: 0 }}
       animate={inView ? { scale: 1, opacity: 1 } : {}}
       transition={{ duration: 0.25 }}
-      className="mb-3 cursor-pointer"
+      className={`mb-3 ${isClickable ? 'cursor-pointer' : ''}`}
     >
       {children}
     </motion.div>
@@ -52,6 +53,7 @@ export default function AnimatedList({
 }: AnimatedListProps) {
   const listRef = useRef<HTMLDivElement | null>(null);
   const [selectedIndex, setSelectedIndex] = useState(initialSelectedIndex);
+  const isClickable = Boolean(onItemSelect);
 
   const handleItemMouseEnter = (index: number) => {
     setSelectedIndex(index);
@@ -84,19 +86,20 @@ export default function AnimatedList({
       <div
         ref={listRef}
         className={`flex flex-col gap-6 ${
-  !displayScrollbar ? "no-scrollbar" : ""
-}`}
+          !displayScrollbar ? "no-scrollbar" : ""
+        }`}
       >
         {items.map((item, index) => (
           <AnimatedItem
             key={`${item}-${index}`}
             index={index}
+            isClickable={isClickable}
             onMouseEnter={() => handleItemMouseEnter(index)}
             onClick={() => handleItemClick(item, index)}
           >
             <div className={itemClassName}>
-  {item}
-</div>
+              {item}
+            </div>
           </AnimatedItem>
         ))}
       </div>

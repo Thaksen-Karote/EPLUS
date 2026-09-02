@@ -24,12 +24,12 @@ export const faqsData: FAQ[] = [
     answer: 'Yes, we offer comprehensive post-installation maintenance and support services. Our team provides regular maintenance schedules, emergency support, and annual maintenance contracts (AMC) to ensure optimal performance of all installed systems.',
     category: 'services',
   },
-  {
-    id: 'faq-4',
-    question: 'What certifications does Engineering Plus hold?',
-    answer: 'Engineering Plus is certified with ISO 9001:2015 for Quality Management, ISO 14001:2015 for Environmental Management, and ISO 45001:2018 for Occupational Health & Safety. We also hold CPCB approval and comply with all relevant environmental and safety standards.',
-    category: 'general',
-  },
+  // {
+  //   id: 'faq-4',
+  //   question: 'What certifications does Engineering Plus hold?',
+  //   answer: 'Engineering Plus is certified with ISO 9001:2015 for Quality Management, ISO 14001:2015 for Environmental Management, and ISO 45001:2018 for Occupational Health & Safety. We also hold CPCB approval and comply with all relevant environmental and safety standards.',
+  //   category: 'general',
+  // },
   {
     id: 'faq-5',
     question: 'How do you ensure project quality?',
