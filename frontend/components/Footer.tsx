@@ -9,7 +9,6 @@ export default function Footer() {
       { label: 'Services', href: '/services' },
       { label: 'Projects', href: '/projects' },
       { label: 'Gallery', href: '/gallery' },
-      { label: 'Certificates', href: '/certificates' },
       { label: 'Careers', href: '/careers' },
     ],
     Services: [
