@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { ContactFormData, ApiResponse } from '@/types';
 
-// Initialize Resend with API key
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 /**
  * POST /api/contact

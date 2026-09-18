@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+
 
 const HR_EMAIL = process.env.HR_EMAIL || 'hr@engineeringplus.co.in';
 
 export async function POST(request: NextRequest) {
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const formData = await request.formData();
 
     const fullName = formData.get('fullName') as string;
