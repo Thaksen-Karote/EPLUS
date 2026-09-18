@@ -237,7 +237,7 @@ function ContactFormInner() {
              <div>
                <p className="text-sm font-semibold text-slate-900 uppercase tracking-wide">Email</p>
                <p className="text-slate-600">
-                 director@engineeringplus.com
+                 director@engineeringplus.co.in
                </p>
              </div>
            </div>
