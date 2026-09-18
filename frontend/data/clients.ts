@@ -6,7 +6,7 @@ export const clientsData: Client[] = [
     name: 'GMDA (Gurugram Metropolitan Development Authority)',
     industry: 'EPC / Public Infrastructure',
     location: 'Gurugram, Haryana (Pan India)',
-    logo: '/logos/govt.png',
+    logo: '/Gallery/CLIENTS/gmda.png',
     description:
       'Gurugram Metropolitan Development Authority, orchestrating large-scale urban infrastructure development, drainage networks, and mega sewage treatment projects in the NCR region.',
     projectsCompleted: 1,
@@ -17,7 +17,7 @@ export const clientsData: Client[] = [
     name: 'MCK (Municipal Corporation Karnal)',
     industry: 'PHD / Waste Water / Municipal EPC',
     location: 'Karnal, Haryana (Pan India)',
-    logo: '/logos/govt.png',
+    logo: '/Gallery/CLIENTS/mck.png',
     description:
       'Municipal Corporation Karnal, driving municipal water sanitation, civic infrastructure, and multiple high-capacity sewage treatment plants and power distribution substations.',
     projectsCompleted: 4,
@@ -33,7 +33,7 @@ export const clientsData: Client[] = [
     name: 'UPRVUNL (Uttar Pradesh Rajya Vidyut Utpadan Nigam Limited)',
     industry: 'Power & Energy / Industrial EPC',
     location: 'Sonebhadra, Uttar Pradesh (Pan India)',
-    logo: '/logos/obra.png',
+    logo: '/Gallery/CLIENTS/uprvunl.png',
     description:
       'State power generation utility of Uttar Pradesh operating thermal power stations. Turnkey execution of industrial STPs, electrical substations, and ACSR power transmission line networks.',
     projectsCompleted: 2,
@@ -47,29 +47,18 @@ export const clientsData: Client[] = [
     name: 'NTPC Limited',
     industry: 'Power & Energy / Industrial EPC',
     location: 'Prayagraj, Uttar Pradesh (Pan India)',
-    logo: '/logos/ntpc.png',
+    logo: '/Gallery/CLIENTS/ntpc.png',
     description:
       'India’s largest power generation company. Engineering Plus executed environmental infrastructure and sewage treatment facilities for major power generation projects.',
     projectsCompleted: 1,
     keyProjects: ['2.2 MLD Sewage Treatment Plant, NTPC Meja'],
   },
   {
-    id: 'dlf',
-    name: 'DLF Limited',
-    industry: 'Real Estate & Hospitality',
-    location: 'Gurugram, Haryana (Pan India)',
-    logo: '/logos/m3m.png',
-    description:
-      'India’s premier commercial and residential real estate developer. Executed high-end interior design and commercial infrastructure solutions in landmark DLF complexes.',
-    projectsCompleted: 1,
-    keyProjects: ['AMPM Cafe - DLF Phase IV, Gurugram'],
-  },
-  {
     id: 'kec',
     name: 'KEC International / Vedanta',
     industry: 'EPC / Industrial Infrastructure',
     location: 'Odisha (Pan India)',
-    logo: '/logos/vedanta.png',
+    logo: '/Gallery/CLIENTS/keci.png',
     description:
       'Global infrastructure EPC major. Delivered complete interior and civil infrastructure works for Vedanta administrative and operational facilities.',
     projectsCompleted: 1,
@@ -80,7 +69,7 @@ export const clientsData: Client[] = [
     name: 'PHD (Public Health Engineering Dept.)',
     industry: 'PHD / Waste Water / Infrastructure',
     location: 'Kurukshetra, Haryana (Pan India)',
-    logo: '/logos/govt.png',
+    logo: '/Gallery/CLIENTS/phed.png',
     description:
       'Government Public Health Engineering Department driving municipal water supply, environmental sanitation, and large-capacity sewage treatment plants.',
     projectsCompleted: 1,
@@ -91,7 +80,7 @@ export const clientsData: Client[] = [
     name: 'Vedanta Group',
     industry: 'Mining & Metals / Energy',
     location: 'Odisha (Pan India)',
-    logo: '/logos/vedanta.png',
+    logo: '/Gallery/CLIENTS/vedanta.png',
     description:
       'Global natural resources conglomerate. Delivered administrative building interior and infrastructure execution.',
     projectsCompleted: 1,
@@ -102,7 +91,7 @@ export const clientsData: Client[] = [
     name: 'M3M India',
     industry: 'Real Estate',
     location: 'Gurugram, Haryana (Pan India)',
-    logo: '/logos/m3m.png',
+    logo: '/Gallery/CLIENTS/m3m.png',
     description:
       'Leading real estate developer known for luxury residential and commercial projects. MEPF infrastructure support.',
     projectsCompleted: 1,
@@ -113,7 +102,7 @@ export const clientsData: Client[] = [
     name: 'Indian School of Hospitality (ISH)',
     industry: 'Education & Hospitality',
     location: 'Gurugram, Haryana (Pan India)',
-    logo: '/logos/ish.png',
+    logo: '/Gallery/CLIENTS/ish.png',
     description:
       'Premier hospitality education institute in Gurugram. Facility interior fit-out and modern architectural execution.',
     projectsCompleted: 1,

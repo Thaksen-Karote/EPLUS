@@ -4,6 +4,7 @@ import { heroImagesByPage } from "@/data/hero-images";
 import SectionWrapper from "@/components/SectionWrapper";
 import ServiceCard from "@/components/ServiceCard";
 import ProjectCard from "@/components/ProjectCard";
+import TrustedClients from "@/components/TrustedClients";
 import { fetchServices, fetchFeaturedProjects } from "@/lib/api";
 import Link from "next/link";
 import { ShieldCheck, CircleCheckBig, Brain, Workflow } from "lucide-react";
@@ -211,6 +212,9 @@ export default async function Home() {
           </Link>
         </div>
       </SectionWrapper>
+
+      {/* Trusted Clients Section */}
+      <TrustedClients />
 
       {/* CTA Section */}
       <SectionWrapper

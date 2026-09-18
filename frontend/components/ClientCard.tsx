@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Client } from '@/types';
 import { Building2, MapPin, CheckCircle2, ChevronDown, FolderCheck } from 'lucide-react';
 
@@ -8,8 +9,28 @@ interface ClientCardProps {
   client: Client;
 }
 
+// Custom per-client logo sizing map keyed by exact image filename (Gallery/CLIENTS/)
+const clientLogoStyles: Record<string, string> = {
+  gmda: 'scale-[1.25] p-0',
+  ish: 'scale-[1.20] p-0',
+  keci: 'scale-[1.00] p-0',
+  m3m: 'scale-[1.10] p-0.5',
+  mck: 'scale-[1.15] p-0',
+  ntpc: 'scale-[1.05] p-0.5',
+  phed: 'scale-[1.10] p-0.5',
+  uprvunl: 'scale-[1.10] p-0.5',
+  vedanta: 'scale-[1.25] p-0',
+};
+
 export default function ClientCard({ client }: ClientCardProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [imageError, setImageError] = useState(false);
+
+  const logoFilename = client.logo.split('/').pop()?.split('.')[0]?.toLowerCase() || '';
+  const logoStyle =
+    clientLogoStyles[client.id] ||
+    clientLogoStyles[logoFilename] ||
+    'p-1';
 
   return (
     <div className="group relative bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between overflow-hidden">
@@ -17,10 +38,21 @@ export default function ClientCard({ client }: ClientCardProps) {
       <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-tertiary)] to-[var(--color-quaternary)]" />
 
       <div>
-        {/* HEADER ROW: ICON & LOCATION */}
+        {/* HEADER ROW: CLIENT LOGO & LOCATION */}
         <div className="flex items-start justify-between gap-4 mb-4">
-          <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-100 group-hover:bg-[var(--color-primary)]/10 text-[var(--color-primary)] transition-colors">
-            <Building2 className="w-6 h-6" />
+          <div className="w-16 h-16 relative flex items-center justify-center rounded-xl bg-white border border-slate-200 p-2 shadow-sm shrink-0 group-hover:border-[var(--color-primary)]/40 transition-colors overflow-hidden">
+            {client.logo && !imageError ? (
+              <Image
+                src={client.logo}
+                alt={client.name}
+                width={60}
+                height={60}
+                className={`max-h-full max-w-full w-auto h-auto object-contain transition-transform ${logoStyle}`}
+                onError={() => setImageError(true)}
+              />
+            ) : (
+              <Building2 className="w-7 h-7 text-[var(--color-primary)]" />
+            )}
           </div>
 
           {client.location && (
